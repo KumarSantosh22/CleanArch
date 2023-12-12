@@ -11,8 +11,7 @@ namespace PaymentGateways.Extentions
     {
         public static void AddPaymentGateways(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddSingleton((StripeConfig)configuration.GetSection("Stripe"));
-            StripeConfiguration.ApiKey = configuration["Stripe:SecretKey"];
+            StripeConfiguration.ApiKey = configuration["StripeConfig:SecretKey"];
             services.AddScoped<IStripeGateway, StripeGatewayProvider>();
         }
     }

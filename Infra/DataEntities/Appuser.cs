@@ -1,10 +1,12 @@
 ﻿using Data.Entities.Contracts;
+using System.ComponentModel.DataAnnotations;
 
 namespace Data.Entities
 {
     public class Appuser : IAuditable<string>
     {
-        public Guid UserId { get; set; }
+        [Key]
+        public Guid Id { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
         public string Email { get; set; }

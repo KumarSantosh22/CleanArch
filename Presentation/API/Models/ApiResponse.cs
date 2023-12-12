@@ -9,12 +9,12 @@ namespace API.Models
         public string? Message { get; set; }
         public T? Data { get; set; }
 
-        public static APIResponse<T> Success(T data, PageInfo pageInfo, HttpStatusCode statusCode = HttpStatusCode.OK)
+        public static APIResponse<T> Success(T data, HttpStatusCode statusCode = HttpStatusCode.OK)
         {
             return new APIResponse<T> { Data = data, IsSucceed = true, Status = statusCode };
         }
 
-        public static APIResponse<T> Success(T data, PageInfo pageInfo, string message, HttpStatusCode statusCode = HttpStatusCode.OK)
+        public static APIResponse<T> Success(T data, string message, HttpStatusCode statusCode = HttpStatusCode.OK)
         {
             return new APIResponse<T> { Data = data, IsSucceed = true, Status = statusCode, Message = message };
         }

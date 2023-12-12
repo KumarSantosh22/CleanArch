@@ -1,10 +1,12 @@
-﻿namespace API.Extentions
+﻿using Services;
+
+namespace API.Extentions
 {
     public static class CoreServiceCollection
     {
-        public static void AddCoreServices(this IServiceCollection services, IConfiguration configuration)
+        public static void RegisterServices(this IServiceCollection services, IConfiguration configuration)
         {
-
+            services.AddAppServices(configuration);
         }
     }
 }

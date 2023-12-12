@@ -1,16 +1,16 @@
 ﻿using Entities;
-using Services.Contracts.Tickets;
+using UseCases.Contracts.Tickets;
 
-namespace Services.Providers
+namespace UseCases.Providers
 {
     public class RaiseTicketRequest : IRaiseTicketRequest
     {
-        public async Task<Ticket> CreateTicketRequest()
+        public async Task<Ticket> CreateTicketRequest(string name)
         {
             return new Ticket()
             {
                 Id=Guid.NewGuid(),
-                Name="Test Service",
+                Name= name,
                 CreatedOn=DateTime.Now,
                 CreatedBy=0,
                 UpdateOn=DateTime.Now,

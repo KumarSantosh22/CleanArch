@@ -1,8 +1,8 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using Services.Contracts.Tickets;
-using Services.Providers;
+using UseCases.Contracts.Tickets;
+using UseCases.Providers;
 
-namespace Services.Extentions
+namespace UseCases.Extentions
 {
     public static class DomainServiceCollection
     {

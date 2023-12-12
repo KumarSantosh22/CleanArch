@@ -1,4 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using API.Models;
+using DTOs.Response;
+using Microsoft.AspNetCore.Mvc;
+using Services.Contracts;
+using System.Collections.Generic;
 
 namespace API.Controllers
 {
@@ -6,10 +10,25 @@ namespace API.Controllers
     [ApiController]
     public class TicketsController : ControllerBase
     {
-        [HttpGet]
-        public IEnumerable<string> Get()
+        private readonly ITicketContract ticketContract;
+
+        public TicketsController(ITicketContract ticketContract)
         {
-            return new string[] { "value1", "value2" };
+            this.ticketContract = ticketContract;
+        }
+
+        [HttpGet]
+        public async Task<ActionResult<APIResponse<IEnumerable<TicketResponseDto>>>> Get()
+        {
+            try
+            {
+                IEnumerable<TicketResponseDto> tickets = await ticketContract.GetAll();
+                return Ok(APIResponse<IEnumerable<TicketResponseDto>>.Success(tickets));
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(APIResponse<IEnumerable<TicketResponseDto>>.Failure(ex.Message));
+            }
         }
 
         [HttpGet("{id}")]

@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="12.0.1" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0" />
   </ItemGroup>
 
@@ -15,6 +16,8 @@
     <ProjectReference Include="..\..\Domain\Services\UseCases.csproj" />
     <ProjectReference Include="..\..\Infra\Data.Persistence\Data.Persistence.csproj" />
     <ProjectReference Include="..\..\Infra\DataEntities\Data.Entities.csproj" />
+    <ProjectReference Include="..\..\Infra\PaymentGateways\PaymentGateways.csproj" />
+    <ProjectReference Include="..\DTOs\DTOs.csproj" />
   </ItemGroup>
 
 </Project>

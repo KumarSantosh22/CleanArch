@@ -2,7 +2,7 @@
 using Data.Persistence.Contracts;
 using Data.Persistence.DbContexts;
 
-namespace Data.Persistence.Providers
+namespace Data.Persistence.Providers.Repositories
 {
     public class AppuserRepository : BaseRepository<Appuser>, IAppuserRepository
     {

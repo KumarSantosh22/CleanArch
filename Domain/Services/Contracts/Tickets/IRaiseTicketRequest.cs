@@ -1,9 +1,9 @@
 ﻿using Entities;
 
-namespace Services.Contracts.Tickets
+namespace UseCases.Contracts.Tickets
 {
     public interface IRaiseTicketRequest
     {
-        Task<Ticket> CreateTicketRequest();
+        Task<Ticket> CreateTicketRequest(string Name);
     }
 }

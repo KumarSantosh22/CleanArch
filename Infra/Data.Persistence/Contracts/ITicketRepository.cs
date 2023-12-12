@@ -1,6 +1,8 @@
-﻿namespace Data.Persistence.Contracts
+﻿using Data.Entities;
+
+namespace Data.Persistence.Contracts
 {
-    public class ITicketRepository
+    public interface ITicketRepository: IRepository<Ticket>
     {
     }
 }
